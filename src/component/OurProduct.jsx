@@ -1,27 +1,22 @@
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import ProductCard from "./ProductCard";
+import { useGetProductQuery } from "../features/ProductApi";
+import { useNavigate } from "react-router-dom";
+
 
 const OurProduct = () => {
-  const productData = [
-    {
-      img: "https://images.pexels.com/photos/51958/oranges-fruit-vitamins-healthy-eating-51958.jpeg?auto=compress&cs=tinysrgb&w=600",
-      price: "$100",
-      name: "Orange",
-    },
-    {
-      img: "https://images.pexels.com/photos/51958/oranges-fruit-vitamins-healthy-eating-51958.jpeg?auto=compress&cs=tinysrgb&w=600",
-      price: "$1",
-      name: "Orange",
-    },
-    {
-      img: "https://images.pexels.com/photos/51958/oranges-fruit-vitamins-healthy-eating-51958.jpeg?auto=compress&cs=tinysrgb&w=600",
-      price: "$1",
-      name: "Orange",
-    },
-  ];
-
+  const nav = useNavigate()
+ const { data:productData , isLoading, isError } = useGetProductQuery({ page: 1, limit: 3 });
+  console.log(productData, "product log");
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  if (isError) {
+    return <p>Error something went worng</p>;
+  }
+  console.log(productData);
   return (
-    <>
+    <div>
       <div className="w-[100vw] my-[100px]">
         <h3 className="text-center text-[40px] font-bold">
           <span className="text-[#F28123]">Our</span> Products
@@ -35,35 +30,23 @@ const OurProduct = () => {
           <br /> itaque eveniet beatae optio.
         </p>
       </div>
-      <div className="flex flex-col gap-6 mycontainer justify-center items-center md:flex-row " >
-        {productData.map((ele) => (
-          <>
-            <div className="w-[350px] h-[545px] px-[30px] pt-[30px]  text-center rounded  shadow-outline shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),4px_0_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1),-4px_0_6px_-1px_rgba(0,0,0,0.1)] hover:shadow-none">
-              <div className="w-[350px] h-[310] mb-[20px]">
-                <img src={ele.img} width="300px" alt="fruits" />
-              </div>
-              <div className="pl-[30px] flexd col justify-center items-center">
-                <h3 className="text-center mb-[10px]  font-semibold text-3xl ">
-                  {ele.name}
-                </h3>
-                <h2 className="text-center ">
-                  <span className="font-bold">Per Kg</span> <br />
-                  <span className="font-black text-4xl block mt-2.5 mb-6">
-                    {ele.price}
-                  </span>
-                </h2>
-                <div className="ml-[20%]">
-                  <button className="bg-[#F28123] py-[13px] px-[20px] rounded-full flex justify-center items-center gap-2">
-                    <FaShoppingCart />
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-          </>
+
+      <div className="flex flex-col gap-6 mycontainer justify-center items-center md:flex-row ">
+        {productData?.data.map((el, i) => (
+          <ProductCard el={el} key={i} />
         ))}
       </div>
-    </>
+      <div className="mt-[20px] flex justify-center">
+      <button
+  onClick={() => nav('/shop')}
+  className="bg-primary text-white text-base font-semibold rounded-full py-2.5 px-6 mt-7 md:px-5 shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg active:scale-100"
+>
+  See more 
+</button>
+
+      </div>
+
+    </div>
   );
 };
 

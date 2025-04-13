@@ -6,7 +6,7 @@ const Banner = () => {
   const nav = useNavigate()
 
   return (
-    <div className='flex flex-col items-center justify-center' style={{
+    <div className=' flex flex-col items-center justify-center '  style={{
       background: "linear-gradient(rgba(0,10,10,0.5),rgba(0,10,10,0.5)),url('https://i.pinimg.com/564x/c3/2b/09/c32b09c242df09b22a5537d8b5094389.jpg')",
       height: "100vh",
       backgroundSize: "cover",

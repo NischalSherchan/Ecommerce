@@ -1,8 +1,11 @@
 import React from 'react'
+import SmallBanner from '../component/smallBanner'
 
 const Gallery = () => {
+  const title= 'Images';
+  const subTitle = 'Product Images'
   return (
-    <div>Gallery</div>
+    <SmallBanner title={title}  subTitle={subTitle}/>
   )
 }
 

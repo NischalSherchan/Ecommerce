@@ -22,7 +22,7 @@ const Services = () => {
   ]
 
   return (
-    <div className='bg-[#f5f5f5] py-[80px]'>
+    <div className='bg-[#f5f5f5] py-[80px] '>
       <div className="flex flex-col gap-4 justify-between mycontainer px-[80px] md:flex-row md:gap-3">
         {serviceData.map((el) => (
           <div className='flex items-center'>
