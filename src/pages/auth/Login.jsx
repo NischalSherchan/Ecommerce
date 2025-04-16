@@ -86,6 +86,7 @@ const Login = () => {
           <FaLock className="h-5 w-5 text-gray-400" />
           </div>
             <input
+              {...register("password")}
               id="password"
               type={showPassword ? "text" : "password"}
                   autoComplete="new-password"
@@ -94,9 +95,6 @@ const Login = () => {
                     errors.password ? "border-red-500" : "border-gray-300"
                   } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-[#F28123] focus:border-[#F28123] sm:text-sm`}
                 />
-            {errors.password && (
-              <h1 className="text-red-600">{errors.password.message}</h1>
-            )}
             <button
               type="button"
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
@@ -110,6 +108,9 @@ const Login = () => {
               )}
             </button>
           </div>
+            {errors.password && (
+              <h1 className=" text-sm text-red-500 h-5 mt-1">{errors.password.message}</h1>
+            )}
         </div>
 
         <div className="w-full flex flex-col items-center gap-5">

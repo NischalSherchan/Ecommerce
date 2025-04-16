@@ -11,7 +11,7 @@ export const ProductApi = createApi({
   endpoints: (builder) => ({
     getProduct: builder.query({
       query: ({ page = 1, limit = 3 } = {}) =>
-        `product/fetchProducts?page=${page}&perPage=${limit}`,
+        `/product/fetchProducts?page=${page}&perPage=${limit}`,
       providesTags: ["product"],
     }),
     getProductDetails: builder.query({
