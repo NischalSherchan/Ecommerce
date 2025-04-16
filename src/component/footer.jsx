@@ -113,7 +113,7 @@ const Footer = () => {
       <div className=" flex justify-between px-20 py-3">
         <div >
           <p >Copyrights &copy; 2025, fruitsNinja All rights reserved</p>
-          <p>Distrubuted by ninja hattori</p>
+          <p>Distrubuted by Nischal sherchan</p>
         </div>
         <div className="flex gap-1.5 cursor-pointer" >
           <FaFacebook />

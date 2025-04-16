@@ -138,7 +138,7 @@ const Header = () => {
               </div>
             </div>
             {profileItems && (
-              <div className="absolute top-10 w-[160px] bg-white p-1 rounded-md text-[#777]">
+              <div className="absolute top-10 w-[160px] bg-white p-1 rounded-md text-[#777] ">
                 {loggedInUser.isAdmin === true ? (
                   <div>
                     <button
@@ -175,14 +175,14 @@ const Header = () => {
           </div>
         ) : (
           <button
-            className="bg-primary px-4 py-2 font-medium rounded-md cursor-pointer"
+            className="  bg-primary px-4 py-2 font-medium rounded-md cursor-pointer m-4"
             onClick={() => nav("/login")}
           >
             Login
           </button>
         )}
 
-        <div
+  { !token === null &&( <div
           className="block lg:hidden text-3xl   cursor-pointer"
           onClick={() => {
             setMenuOpen((prev) => !prev);
@@ -190,7 +190,7 @@ const Header = () => {
           }}
         >
           {menuOpen ? <RxCross2 /> : <GiHamburgerMenu />}
-        </div>
+        </div>)}
       </div>
 
       {/* mobile navaigation */}
