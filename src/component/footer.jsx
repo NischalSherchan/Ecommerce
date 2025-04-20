@@ -26,7 +26,7 @@ const pageData = [
 const Footer = () => {
   return (
     <footer className="bg-[#051922] py-[60px] text-white mt-[50px]">
-      <div className="mycontainer grid grid-cols-4 gap-5">
+      <div className="mycontainer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ">
         {/* ABOUT US */}
         <section>
           <div className="mb-[14px]">
@@ -113,7 +113,7 @@ const Footer = () => {
       <div className=" flex justify-between px-20 py-3">
         <div >
           <p >Copyrights &copy; 2025, fruitsNinja All rights reserved</p>
-          <p>Distrubuted by Nischal sherchan</p>
+          <p>Distrubuted by Ninja Hattori</p>
         </div>
         <div className="flex gap-1.5 cursor-pointer" >
           <FaFacebook />

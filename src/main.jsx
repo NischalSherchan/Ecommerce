@@ -21,6 +21,8 @@ import ProductList from "./pages/auth/admin/productList.jsx";
 import AdminRoutes from "./component/adminRoutes.jsx";
 import UpdateProduct from "./pages/auth/admin/update.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const router = createBrowserRouter([
   {
     path: "/",
